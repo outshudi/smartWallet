@@ -1,0 +1,89 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+
+\title{smartWallet}
+\author{Olivier Utshudi}
+\date{August 2019}
+
+\begin{document}
+
+
+\begin{titlepage}
+\centering
+\vspace{0.5 cm}
+    \begin{center}
+        \textsc{\Large Università degli Studi di Padova}\\[2.0 cm]
+    \end{center}
+    \begin{center}
+        \textsc{\Large smartWallet}
+    \end{center}
+    \begin{center}
+        \textsc{\Large Progetto di Programmazione ad Oggetti}\\[2.0 cm]
+    \end{center}
+    \begin{center}
+        \Large Olivier Utshudi (1143556)\\[1.0 cm]
+    \end{center}
+    \begin{center}
+        \large Anno 2018-2019
+    \end{center}
+\end{titlepage}
+%-----------------------------------------------------------------
+
+\newpage
+\renewcommand*\contentsname{Indice}
+\tableofcontents
+
+%-----------------------------------------------------------------
+\newpage
+\section{Introduzione}
+\subsection{Abstract}
+La smartWallet è una startup che offre servizi e infrastrutture informatiche in ambito economico. Ciò che rende nota l'azienda è il software, che prende il nome dall'omonima società, il quale dà la possibilià ai propri utenti di registrare le proprie transazioni di denaro quasi come in partita doppia solo che vengono prese in considerazione le seguenti tipologie:
+\begin{enumerate}
+    \item Entrata 
+    \item Uscita 
+    \item Abbonamento  
+    \item Risparmio
+\end{enumerate}
+\subsection{Funzionalità}
+Il programma permette di registrare le operazioni effettuate dall'utente e in più fornisce funzionalità di:
+\begin{enumerate}
+    \item Caricamento dati;
+    \item Salvataggio automatico o su richiesta dei dati; 
+    \item Aggiunta di una nuova transazione;
+    \item Modifica di una singola transazione preesistente;
+    \item Rimozione di una singola transazione o dell'intero insieme;
+    \item Visualizzazione della lista dei movimentirelazione ai parametri di filtraggio;
+    \item Visualizzazione dei totali parziali divisi per tipologia in base ai parametri di ricerca;
+\end{enumerate}
+%--------------------------------------------------------------------
+
+\section{Manuale d'uso}
+Alla prima apertura del programma, verrà mostrata la finestra principale del software, dove la lista delle operazioni risulterà vuota, la barra di ricerca come altri elementi visivi saranno settati ai loro parametri di default.
+\subsection{Inserimento}
+Cliccando il pulsante "Aggiungi" nella finestra principale si aprirà una finestra di dialogo, in cui è data la possibilità di scegliere il tipo di transazione e a seconda della tipologia scelta si possono completare i campi campi inerenti. Infine per completare l'inserimento premere "Aggiungi".
+\newline Per la registrazione automatica di un risparmio "full" calcolato in base ad un'abbonamento o uscita è necessario prima cliccare la checkbox "Risparmio" e poi su quella "full". Invece per un risparmio normale basta cliccare solo la prima delle due checkbox.
+\subsection{Modifica}
+Selezionando la transazione che si desidera modificare e cliccando sulla finestra principale il pulsante "Modifica", si aprirà una finestra di dialogo, avente gli attuali parametri della transazione e si avra la possibilita di modificare qualche valore o modificare interamente il tipo di movimento. L'operazione si conclude cliccando su pulsante "Modifica".
+\subsection{Rimozione}
+Selezionando la transazione che si desidera eliminare e cliccando sulla finestra principale il pulsante "Rimuovi", si avrà eliminato quella determinata operazione. 
+\subsection{Svuota}
+Premendo il pulsante "Svuota", nella finestra principale si avrà eliminato l'intera lista delle transazioni.
+\subsection{Menu File}
+\subsubsection{Apri}
+Se cliccato si dà la possibilità di aprire un file .XML con estensione .sw da cui caricare i dati.
+\subsubsection{Salva}
+Se cliccato salva lo stato corrente del programma.
+\subsubsection{Salva con nome}
+Se cliccato salva lo stato corrente del programma su un file .XML diverso da quello corrente.
+\subsubsection{Esci}
+Se cliccatto esce dal programma.
+%---------------------------------------------------------------------------
+
+\section{Progettazione}
+Lo sviluppo del progetto segue il pattern Model-View-Controller dove oltre alla gerarchia, è stato realizzato un container e un puntatore smart per una migliore gestione della memoria.
+\subsection{Gerarchia}
+La gerachia ha come classe base astratta il tipo transazione da cui derivano i tipi entrata, risparmio, uscita e abbonamento (ulteriormente derivato da uscita). Questi oggetti implementano metodi virtuali operatori di uguaglianza, disuguaglianza, conversione a stringa e di metodi virtuali puri di clonazione e di restituzione a stringa del tipo dell'oggetto.
+
+\end{document}
